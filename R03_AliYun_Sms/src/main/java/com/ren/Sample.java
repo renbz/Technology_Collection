@@ -26,7 +26,7 @@ public class Sample {
     }
 
     public static void sendMsm(String phoneNumber, String checkCode) throws Exception {
-        Client client = Sample.createClient("LTAI5t6bLqaoeXm47JPhxwp3", "1vO5oTy4S5laeNhrTHDY39yjydU1Ph");
+        Client client = Sample.createClient("", "");
         SendSmsRequest sendSmsRequest = new SendSmsRequest()
                 .setPhoneNumbers(phoneNumber)
                 .setSignName("AlphaACM博客系统")

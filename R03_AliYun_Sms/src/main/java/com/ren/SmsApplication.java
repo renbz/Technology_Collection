@@ -32,7 +32,7 @@ public class SmsApplication {
 
         // 连接阿里云
         java.util.List<String> args = java.util.Arrays.asList(args_);
-        Client client = SmsApplication.createClient("LTAI5t6bLqaoeXm47JPhxwp3", "1vO5oTy4S5laeNhrTHDY39yjydU1Ph");
+        Client client = SmsApplication.createClient("", "");
         // 创建对应 API 的 Request 。 类的命名规则为 API 方法名加上 Request
         AddSmsSignRequest addSmsSignRequest = new AddSmsSignRequest()
                 .setResourceOwnerAccount("17777784883")
