@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="R03_AliYun_Sms" />
+        <module name="R04_NetWork_BIO" />
+        <module name="R01_ElasticSearch_API" />
+        <module name="R02_ElasticSearch_JD" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="R01_ElasticSearch_API" options="-parameters" />
+      <module name="R02_ElasticSearch_JD" options="-parameters" />
+      <module name="R03_AliYun_Sms" options="-parameters" />
+      <module name="R04_NetWork_BIO" options="" />
+    </option>
+  </component>
+</project>
