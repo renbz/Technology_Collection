@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="R05_NetWork_NIO_CharRoom" />
         <module name="R03_AliYun_Sms" />
         <module name="R04_NetWork_BIO" />
         <module name="R01_ElasticSearch_API" />

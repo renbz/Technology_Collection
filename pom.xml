@@ -11,6 +11,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>R04_NetWork_BIO</module>
+        <module>R05_NetWork_NIO_CharRoom</module>
     </modules>
 
     <properties>

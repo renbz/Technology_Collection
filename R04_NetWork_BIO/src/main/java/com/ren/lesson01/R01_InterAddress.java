@@ -20,7 +20,6 @@ public class R01_InterAddress {
             InetAddress inetAddress4 = InetAddress.getByName("localhost");
             System.out.println(inetAddress4);
 
-
             //查询网站ip地址
             InetAddress inetAddress2 = InetAddress.getByName("www.baidu.com");
             System.out.println(inetAddress2);
@@ -30,9 +29,6 @@ public class R01_InterAddress {
             System.out.println(inetAddress2.getHostAddress());
             System.out.println(inetAddress2.getCanonicalHostName());
             System.out.println(inetAddress2.getHostName());
-
-
-
 
         } catch (UnknownHostException e) {
             e.printStackTrace();
