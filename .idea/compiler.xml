@@ -11,6 +11,7 @@
         <module name="R03_AliYun_Sms" />
         <module name="R04_NetWork_BIO" />
         <module name="R01_ElasticSearch_API" />
+        <module name="R06_NetWork_NIO_NIO_AIO" />
         <module name="R02_ElasticSearch_JD" />
       </profile>
     </annotationProcessing>
