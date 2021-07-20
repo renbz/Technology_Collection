@@ -17,11 +17,11 @@ public class NioServer {
 
     public void start() throws IOException {
         /**
-         * 1. 创建selector
+         * 1. 通过Selector.open() 创建selector
          */
         Selector selector = Selector.open();
         /**
-         * 2. 通过ServerSocketChannel创建channel通道
+         * 2. 通过ServerSocketChannel.open 创建channel通道
          */
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         /**

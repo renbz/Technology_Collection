@@ -31,7 +31,7 @@ public class ChatServer {
     }
 
 
-    private void start() throws IOException {
+    void start() throws IOException {
         try {
 
             /**
@@ -102,12 +102,13 @@ public class ChatServer {
             System.out.println("客户端 [" + clientSocketChannel.socket().getPort() + "] 已连接");
             /**
              * 回复客户端可读信息
-             *//*
+             */
             clientSocketChannel.write(Charset.forName("UTF-8").encode("你与聊天室其他人都不是朋友关系,请注意隐私安全"));
-*/
-        } else if (key.isReadable()) {
+        }
 
-            // READ事件   -  客户端发送了消息
+        // READ事件  -  客户端发送了消息
+        else if (key.isReadable()) {
+
             SocketChannel clientSocketChannel = (SocketChannel) key.channel();
             /**
              * 创建buffer
@@ -133,6 +134,9 @@ public class ChatServer {
              * 将channel再次注册到selector上，监听其他的可读事件
              */
             clientSocketChannel.register(selector, SelectionKey.OP_READ);
+
+
+
             /**
              * 将客户端发送的请求信息广播给其他客户端
              */

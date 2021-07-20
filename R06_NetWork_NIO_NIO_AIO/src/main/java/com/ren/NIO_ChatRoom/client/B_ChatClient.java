@@ -12,6 +12,4 @@ public class B_ChatClient {
         ChatClient client = new ChatClient("127.0.0.1", 7777);
         client.start();
     }
-
-
 }

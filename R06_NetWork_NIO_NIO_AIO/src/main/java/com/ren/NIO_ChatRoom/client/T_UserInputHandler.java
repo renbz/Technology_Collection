@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class UserInputHandler implements Runnable {
+public class T_UserInputHandler implements Runnable {
 
-    private ChatClient chatClient;
+    private T_ChatClient chatClient;
 
-    public UserInputHandler(ChatClient chatClient) {
+    public T_UserInputHandler(T_ChatClient chatClient) {
         this.chatClient = chatClient;
     }
 

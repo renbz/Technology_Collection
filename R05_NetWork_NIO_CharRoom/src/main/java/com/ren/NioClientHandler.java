@@ -28,7 +28,7 @@ public class NioClientHandler implements Runnable {
     @Override
     public void run() {
         try {
-           while(true) {
+            while (true) {
                 int readyChannels = selector.select();
 
                 if (readyChannels == 0) continue;
@@ -45,12 +45,10 @@ public class NioClientHandler implements Runnable {
                      * selectionKey实例
                      */
                     SelectionKey selectionKey = (SelectionKey) iterator.next();
-
                     /**
                      * **移除Set中的当前selectionKey**
                      */
                     iterator.remove();
-
                     /**
                      * 7. 根据就绪状态，调用对应方法处理业务逻辑
                      */
