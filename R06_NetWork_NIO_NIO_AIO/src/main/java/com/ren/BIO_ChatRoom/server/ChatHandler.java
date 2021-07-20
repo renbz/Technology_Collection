@@ -39,7 +39,6 @@ public class ChatHandler implements Runnable {
                 // 检查用户是否退出
                 if(server.readyToQuit(msg)) break;
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

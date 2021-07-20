@@ -52,30 +52,16 @@ public class NioServer {
              * 获取可用channel的集合
              */
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
-            Iterator<SelectionKey> iterator = selectionKeys.iterator();
-            while (iterator.hasNext()) {
-                /**
-                 * selectionKey的实例
-                 */
-                SelectionKey selectionKey = iterator.next();
-                /**
-                 * 移除Set中的当前的SelectionKey
-                 */
-                iterator.remove();
-
-
+            for (SelectionKey selectionKey : selectionKeys) {
                 /**
                  * 7. 根据就绪状态，调用对应方法处理业务逻辑
                  */
-                /**
-                 * 如果是接入事件
-                 */
+                // 如果是接入事件
                 if (selectionKey.isAcceptable()) acceptHandler(serverSocketChannel, selector);
-                /**
-                 * 如果是可读事件
-                 */
+                // 如果是可读事件
                 if (selectionKey.isReadable()) readHandler(selectionKey, selector);
             }
+            selectionKeys.clear();
         }
 
     }
@@ -139,22 +125,25 @@ public class NioServer {
         if (request.length() > 0) {
             //广播给其他客户端
             System.out.println("::" + request);
-            broadCast(selector,socketChannel,request);
+            broadCast(selector, socketChannel, request);
         }
     }
 
     /**
      * 广播给其他客户端
      */
-    private void broadCast(Selector selector,SocketChannel sourceChannel,String request){
+    private void broadCast(Selector selector, SocketChannel sourceChannel, String request) {
         /**
          * 获取到所有已接入的客户端channel
          */
         Set<SelectionKey> selectionKeySet = selector.keys();
+        /**
+         * 循环向所有channel广播信息
+         */
         selectionKeySet.forEach(selectionKey -> {
             Channel targetChannel = selectionKey.channel();
             // 剔除发消息的客户端
-            if(targetChannel instanceof SocketChannel && targetChannel!=sourceChannel){
+            if (targetChannel instanceof SocketChannel && targetChannel != sourceChannel) {
                 try {
                     // 将消息发送到targetChannel客户端
                     ((SocketChannel) targetChannel).write(Charset.forName("UTF-8").encode(request));
@@ -163,15 +152,7 @@ public class NioServer {
                 }
             }
         });
-
-        /**
-         * 循环向所有channel广播信息
-         */
-
-
     }
-
-
 
     public static void main(String[] args) throws IOException {
         NioServer nioServer = new NioServer();

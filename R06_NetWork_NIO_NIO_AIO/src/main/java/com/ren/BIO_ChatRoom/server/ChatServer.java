@@ -1,12 +1,15 @@
 package com.ren.BIO_ChatRoom.server;
 
-import com.ren.BIO_ChatRoom.client.ChatClient;
-
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author Ren
@@ -16,10 +19,12 @@ public class ChatServer {
 
     private int DEFAULT_PORT = 8888;
     private final String QUIT = "quit";
+    private ExecutorService executorService;
     private ServerSocket serverSocket;
     private Map<Integer, Writer> connectedClients;
 
     public ChatServer() {
+        executorService = Executors.newFixedThreadPool(10);
         connectedClients = new HashMap<>();
     }
 
@@ -55,7 +60,6 @@ public class ChatServer {
         }
     }
 
-
     /**
      * 向非发送端的客户端广播消息
      *
@@ -87,27 +91,30 @@ public class ChatServer {
         }
     }
 
-
+    /**
+     * 是否准备端口连接
+     *
+     * @param msg
+     * @return
+     */
     public boolean readyToQuit(String msg) {
         return QUIT.equals(msg);
     }
-
 
     /**
      * 主流程
      */
     public void start() {
-
         try {
             // 绑定监听端口
             serverSocket = new ServerSocket(DEFAULT_PORT);
             System.out.println("启动服务器，监听端口: " + DEFAULT_PORT + "...");
-
             while (true) {
                 // 等待客户端连接
                 Socket socket = serverSocket.accept();
                 // 创建chathandler线程
-                new Thread(new ChatHandler(this, socket)).start();
+                executorService.execute(new ChatHandler(this, socket));
+                /*new Thread(new ChatHandler(this, socket)).start();*/
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -120,5 +127,4 @@ public class ChatServer {
         ChatServer chatServer = new ChatServer();
         chatServer.start();
     }
-
 }
