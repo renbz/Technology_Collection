@@ -13,6 +13,7 @@
         <module>R04_NetWork_BIO</module>
         <module>R05_NetWork_NIO_CharRoom</module>
         <module>R06_NetWork_NIO_NIO_AIO</module>
+        <module>R07_NetWork_Socket</module>
     </modules>
 
     <properties>
