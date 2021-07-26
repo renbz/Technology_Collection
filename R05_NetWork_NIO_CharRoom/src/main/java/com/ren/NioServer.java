@@ -63,9 +63,7 @@ public class NioServer {
             }
             selectionKeys.clear();
         }
-
     }
-
 
     /**
      * 接入事件处理器
@@ -115,8 +113,9 @@ public class NioServer {
              */
             request += Charset.forName("UTF-8").decode(byteBuffer);
         }
+
         /**
-         * 将channel再次注册到selector上，监听其他的可读事件
+         * 将channel再次注册到 selector 上，监听其他的可读事件
          */
         socketChannel.register(selector, SelectionKey.OP_READ);
         /**

@@ -8,16 +8,15 @@ import java.net.Socket;
 
 /**
  * @author Ren
- *
  * 服务器线程处理类
  */
 
-public class R04_TCP_Thread_Server extends Thread{
+public class R04_TCP_Thread_Server extends Thread {
 
     // 和本线程相关的socket
     Socket socket = null;
 
-    public R04_TCP_Thread_Server(Socket socket){
+    public R04_TCP_Thread_Server(Socket socket) {
         this.socket = socket;
     }
 
@@ -31,8 +30,8 @@ public class R04_TCP_Thread_Server extends Thread{
             //3. 获取输入流用来读取客户端信息,将字节流转换为字符流，为输入流添加缓冲
             br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             String info = null;
-            while ((info = br.readLine())!=null){
-                System.out.println("我是服务器，客户端说: "+info);
+            while ((info = br.readLine()) != null) {
+                System.out.println("我是服务器，客户端说: " + info);
             }
             socket.shutdownInput();
             //4. 获取输入流,响应客户端的请求
@@ -50,7 +49,6 @@ public class R04_TCP_Thread_Server extends Thread{
                 e.printStackTrace();
             }
         }
-
 
 
     }
