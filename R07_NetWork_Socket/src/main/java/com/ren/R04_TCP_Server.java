@@ -29,7 +29,6 @@ public class R04_TCP_Server {
         pw.write("欢迎您");
         pw.flush();
 
-
         // 关闭资源
         pw.close();
         br.close();
