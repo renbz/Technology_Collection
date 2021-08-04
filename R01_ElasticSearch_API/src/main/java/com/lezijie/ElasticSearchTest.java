@@ -217,8 +217,6 @@ public class ElasticSearchTest {
                 System.out.println(s.getKey() + " -- " + s.getValue());
             }
             System.out.println("----------------------------");
-
-
         }
     }
 
@@ -309,5 +307,5 @@ public class ElasticSearchTest {
         }
     }
 
-
 }
+

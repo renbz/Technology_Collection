@@ -34,7 +34,8 @@ public class HtmlParseUtil {
         Document document = Jsoup.parse(new URL(url), 30000);
         // 所有你在js中可以使用的方法，这里都能用
         Element element = document.getElementById("J_goodsList");
-        //System.out.println(element.html());
+        System.out.println(element.html());
+
         // 获取所有的li元素
         Elements elements = element.getElementsByTag("li");
         // 获取所有的元素内容

@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/R01_ElasticSearch_API/pom.xml" />
         <option value="$PROJECT_DIR$/R02_ElasticSearch_JD/pom.xml" />
         <option value="$PROJECT_DIR$/R03_AliYun_Sms/pom.xml" />
+        <option value="$PROJECT_DIR$/R09_QQLogin/pom.xml" />
+        <option value="$PROJECT_DIR$/R10_Alipay_ZhiFuBao/pom.xml" />
       </list>
     </option>
   </component>

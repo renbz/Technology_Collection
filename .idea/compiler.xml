@@ -9,17 +9,16 @@
         <outputRelativeToContentRoot value="true" />
         <module name="R05_NetWork_NIO_CharRoom" />
         <module name="R03_AliYun_Sms" />
+        <module name="R09_QQLogin" />
         <module name="R06_NetWork_NIO_NIO_AIO" />
         <module name="R08_DesignPattern" />
+        <module name="R10_Alipay_ZhiFuBao" />
         <module name="R04_NetWork_BIO" />
         <module name="R07_NetWork_Socket" />
         <module name="R01_ElasticSearch_API" />
         <module name="R02_ElasticSearch_JD" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="R08_DesignPattern" target="8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -27,6 +26,8 @@
       <module name="R02_ElasticSearch_JD" options="-parameters" />
       <module name="R03_AliYun_Sms" options="-parameters" />
       <module name="R04_NetWork_BIO" options="" />
+      <module name="R09_QQLogin" options="-parameters" />
+      <module name="R10_Alipay_ZhiFuBao" options="-parameters" />
     </option>
   </component>
 </project>
