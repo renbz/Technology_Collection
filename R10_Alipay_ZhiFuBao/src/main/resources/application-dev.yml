@@ -1,11 +1,11 @@
 server:
-  port: 8989
+  port: 80
 
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/kuangstudy-db?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://ren-aliyun-mysql.mysql.rds.aliyuncs.com:3306/ren_technology_collection?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: mkxiaoer
     hikari:
@@ -21,16 +21,16 @@ spring:
 # 支付宝支付参数配置
 alipay:
   # 应用ID,您的APPID，收款账号既是您的APPID对应支付宝账号
-  app_id: ENC(OJnj7081n472vFCwixWH+FhyKkgzy31j)
+  app_id: 2021000117698383
   # 商户私钥，您的PKCS8格式RSA2私钥
-  merchant_private_key: xxxxxx
+  merchant_private_key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCeQinASvyxg2ZklSkhk4KXrwxaWAnvnUciNwL7gkBjVYKLXmFlkjGJkXorMCAEheOKgG36jPj9M1DL1BcohrJoxYR3qPbdY+dlXLNKUSTS7hqWB2scJJFxwDZGV5em1giVZsFG8xsWwkD6JDlpyzEQwR7GJpVgeTqVeRpXPZlDJEZbUymxBodlkePQQMcZ2HBG8nx7lK+ctvT9t830MEMxNfipMGH+7+eXWwp3LX0QHk3UnntuG+w77if+3yNG7nAbQA81c3ML799jzB62hCE5kqdOnOgFCvRcgUnLVKP/PaXuF8lrA7u+1TWVmO94GeJCbXAyrb6aQNhlOtcKl17bAgMBAAECggEAGWHFLnkYZCQN9Q3TRfZRmKBTm93I4ixYb01hZhMy3nulb1LYziCPX1/8txaF3BPZNap5eRjJClsDl11RxYcs8A7VuxdXWJSgVSpz+vRespHLo8pWzHG0/gh06/06bmCfic6sKwPskU7gev36U1RqbyR6Gg+wH4Px+G0u41UW0qSrGQZVyKnxL3JrB+fyKcexV7XeeQjga1JXzu0VchSN3SF6Bpi2rcqRCH3gGhpQX+lw9T0nBkHNl2icXL9UbA8RqUQ+b2brXMVpBMdn26xrXfC9IjRY6Gc7aP45bo+zmemlB5uoda+5UGsk+5UNN9Tki81Wz2ExiOUj7Vsyf3AUkQKBgQDUCXhx+fhiYxOfAriufNSP70159dv6piLapSshqRA59KqVk8awM284poVRvHxCT/2Iw8AgI5O66I9B9Z1j00y+BRcvLnIcjkcfNhDoDZ83TzZHTMU6zGMK1FN6bZ7et+BTuFIW4gq+tCZ9/JZJM0WG0+k/xafVxSH+a7p8LDjtcwKBgQC/Ejo4T9G472iB+c90tTpbQSKOw2fDQUhOPaOuCwWJ6fikSAeiABSAM4WzFE9oC84JnCFaHLMDYtsXsCwRQIvbC1LlP4BO+Pnut58Xgdh90Tk0N64+zMIGm1sHGLU03ESHWPL49mvluuhCYbLEvYhJMmjx41E+MjcEMeGV3ctu+QKBgQCtrAAiYttGQt58XG9GQ+qa5ifwYCdI2rEroyN704z921+pWjvgcJCFtyb1tsuUSQ5h6evAp0NGUVuda/75F8YA0gyWUZWXvBWXA+K/HwEs/U15AvF84pGw+g5R9d2tkLBGAnACXCzu3IG2qZ+y3zLwZzviRxPcLTZVvIknUdVi7wKBgCw7yAapU+AAbK1Ka+CU5AGkPp/WVPs67cZPNslf+9RFui4uDrZOVnCnfNhMZ2Wq9fP7lS0LX9X02MvPGSSVUMtQ/8vau5WMxi+his8iXEAkY53XFhurw29MH/KwoaKvK5451WYVhj0U3BgiDgTF6/smFG2LNo+ziFEMSzEqu6HhAoGAOBk9dIJesfdKCq5cZl322ZAMUaha6MEiHieU5CdKtk9IJ8bMATplpP0XzqPFbLyJNkJb3RTQEWee43/fvvDOl2qdzWM0FeeH5ngRvFojL2RxZ0hZ4Fb/yf6vhEsqt3JLMAmP2ajKApy4lwz7HG3nx7epgwk8rMg4ve4QJfW81aY=
   # 支付宝公钥
-  alipay_public_key: xxxxx
+  alipay_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApM6f24Zk0UpFR5NrEB184iLsfqyJI+NQ+5KK1/cRymEdfBgUcLQzvDigIUXRbdlb4bWT4CVOc9StpbkYul6CV5mLy8ivj5aU2UStLGxq9wnHv2TTS8Vbcp0A4BcALZQ9aH0+snRF8WXrvL/PdGHMaQmwM5LA7P10abcx9Z+JlG3rpWTSHg3Oesz55+nOQp9nxXTARbQuFPh6e5OCfC2fM+/8o6D4VNPvBz7i+YATpEPtSXVqtVMGJ2tCqw46FDkDijRcJxuIHu/nzU6dFFkCrQcgVQVZ8VjJ7lKWWVL36U1X9VE5h3gf4QTM0sfJIvH+yKujbta9cR/bm8xfco43RQIDAQAB
   # 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-  notify_url: xxxx
+  notify_url: http://renbz.cn
   # 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
   # return_url: https://api.itbooking.net/admin/alipay/returnUrl
-  return_url: xxxxx
+  return_url: http://renbz.cn
   # 签名方式
   sign_type: RSA2
   # 字符编码格式

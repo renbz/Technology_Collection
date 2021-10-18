@@ -2,6 +2,7 @@ spring:
   freemarker:
     suffix: .html
   profiles:
+    # 加载其他 yml环境
     active: pwd2,dev
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -31,4 +32,4 @@ logging:
 # mybatis-plus配置
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
-  type-aliases-package: com.kuangstudy.ksdalipay.entity
+  type-aliases-package: com.ren.entity

@@ -33,7 +33,8 @@ public class NioServer {
          */
         serverSocketChannel.configureBlocking(false);
         /**
-         * 5. 将channel注册到selector上，监听连接事件
+         * 5. 将ServerSocketChannel注册到selector上，监听连接事件
+         *    并且selector对客户端accept连接操作感兴趣
          */
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         System.out.println("服务器启动成功!");
@@ -45,6 +46,9 @@ public class NioServer {
              * 只有当注册到select上的channel监听的事件就绪了才会返回
              * 获取可用channel数量
              */
+
+            // 阻塞等待
+
             int reayChannels = selector.select();
             if (reayChannels == 0) continue;
 
